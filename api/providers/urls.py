@@ -10,6 +10,7 @@ from . import views
 # Create a router and register our viewsets with it.
 router = SimpleRouter()
 router.register(r'provider', views.ProviderViewSet)
+router.register(r'servicearea', views.ServiceAreaViewSet)
 
 
 # Include the routes URLs

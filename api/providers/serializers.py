@@ -3,11 +3,11 @@
 
 from rest_framework import serializers
 
-from .models import Provider
+from .models import Provider, ServiceArea
 
 
 class ProviderSerializer(serializers.ModelSerializer):
-    """Serializer class for Resource model."""
+    """Serializer class for Provider model."""
 
     class Meta:
         """Meta for ProviderSerializer."""
@@ -20,5 +20,22 @@ class ProviderSerializer(serializers.ModelSerializer):
             'phone',
             'language',
             'currency',
+        )
+        read_only_fields = ('id',)
+
+
+class ServiceAreaSerializer(serializers.ModelSerializer):
+    """Serializer class for ServiceArea model."""
+
+    class Meta:
+        """Meta for ServiceAreaSerializer."""
+
+        model = ServiceArea
+        fields = (
+            'id',
+            'name',
+            'price',
+            'provider',
+            'area',
         )
         read_only_fields = ('id',)
